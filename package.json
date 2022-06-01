@@ -1,26 +1,39 @@
 {
-  "name": "streak-counter",
+  "name": "@pkrish123/streak-counter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This is a streak counter library, to be used when implementing functionality such as calculating how many days in a row you've accessed a particular site.",
+  "types": "./dist/src/index.d.ts",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
   "scripts": {
-    "test": "jest"
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pkrish123/streak-counter.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pooja Krishnan <pkrishnan@ippon.fr>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pkrish123/streak-counter/issues"
   },
   "homepage": "https://github.com/pkrish123/streak-counter#readme",
   "devDependencies": {
-    "@types/jest": "^27.5.1",
-    "jest": "^28.1.0",
-    "ts-jest": "^28.0.3",
-    "typescript": "^4.7.2"
+    "@types/jest": "^27.0.3",
+    "@types/jsdom": "^16.2.14",
+    "jest": "^27.4.5",
+    "jsdom": "^19.0.0",
+    "microbundle": "^0.14.2",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.5"
   }
 }
